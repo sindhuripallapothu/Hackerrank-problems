@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { DefaultButton, PrimaryButton } from "@fluentui/react";
 function Slides({ slides }) {
   const [slide, setSlide] = useState(0);
 
@@ -22,30 +22,30 @@ function Slides({ slides }) {
   return (
     <div>
       <div id="navigation" className="text-center">
-        <button
+        <DefaultButton
           data-testid="button-restart"
           className="small outlined"
           onClick={onRestart}
           disabled={slide === 0}
         >
           Restart
-        </button>
-        <button
+        </DefaultButton>
+        <PrimaryButton
           data-testid="button-prev"
           className="small"
           onClick={onPrev}
           disabled={slide === 0}
         >
           Prev
-        </button>
-        <button
+        </PrimaryButton>
+        <DefaultButton
           data-testid="button-next"
           className="small"
           onClick={onNext}
           disabled={slide === slides.length - 1}
         >
           Next
-        </button>
+        </DefaultButton>
       </div>
       <div id="slide" className="card text-center">
         <h1 data-testid="title">{slides[slide].title}</h1>
